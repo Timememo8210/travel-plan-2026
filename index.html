@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陈晓波家庭 2026夏季旅行计划 v3</title>
+<style>
+:root { --p:#2563eb; --a:#f59e0b; --bg:#f8fafc; --c:#fff; --t:#1e293b; --m:#64748b; --b:#e2e8f0; --g:#10b981; --r:#ef4444; --pp:#8b5cf6; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+header{background:linear-gradient(135deg,#1e40af,#3b82f6,#06b6d4);color:#fff;padding:40px 20px;text-align:center;border-radius:16px;margin-bottom:24px}
+header h1{font-size:2em;margin-bottom:8px} header p{opacity:.9;font-size:1.1em}
+.badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:.85em;margin:4px}
+.tabs{display:flex;gap:0;margin-bottom:24px;border-radius:12px;overflow:hidden;border:2px solid var(--p)}
+.tab{flex:1;padding:14px;text-align:center;cursor:pointer;font-weight:700;font-size:1.05em;transition:all .2s}
+.tab.active{background:var(--p);color:#fff}
+.tab:not(.active){background:#fff;color:var(--p)}
+.tab:hover:not(.active){background:#dbeafe}
+.plan{display:none}.plan.active{display:block}
+.s{background:var(--c);border-radius:12px;padding:24px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.s h2{color:var(--p);font-size:1.35em;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--b)}
+.s h3{color:var(--t);font-size:1.1em;margin:14px 0 8px}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.9em}
+th{background:#f1f5f9;padding:10px 12px;text-align:left;font-weight:600}
+td{padding:10px 12px;border-bottom:1px solid var(--b)}
+tr:hover td{background:#f8fafc}
+.hl{background:#fffbeb;border-left:4px solid var(--a);padding:12px 16px;border-radius:0 8px 8px 0;margin:10px 0}
+.tip{background:#ecfdf5;border-left:4px solid var(--g);padding:12px 16px;border-radius:0 8px 8px 0;margin:10px 0}
+.warn{background:#fef2f2;border-left:4px solid var(--r);padding:12px 16px;border-radius:0 8px 8px 0;margin:10px 0}
+.tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.82em;font-weight:600;margin:2px}
+.tg{background:#dcfce7;color:#166534}.ty{background:#fef9c3;color:#854d0e}.tp{background:#f3e8ff;color:#6b21a8}.tb{background:#dbeafe;color:#1e40af}.tr{background:#fee2e2;color:#991b1b}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.card{border:1px solid var(--b);border-radius:10px;padding:14px}
+.price{font-size:1.15em;font-weight:700;color:var(--p)}
+.tl{position:relative;padding-left:28px}.tl::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:3px;background:var(--p);border-radius:3px}
+.tl-item{position:relative;margin-bottom:16px}.tl-item::before{content:'';position:absolute;left:-22px;top:6px;width:10px;height:10px;background:var(--p);border-radius:50%}
+.tl-item.sp::before{background:var(--a);width:12px;height:12px;left:-23px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0}
+.compare .card{text-align:center;padding:20px}
+.compare .card.rec{border:2px solid var(--g);background:#f0fdf4}
+footer{text-align:center;padding:30px;color:var(--m);font-size:.9em}
+@media(max-width:768px){header h1{font-size:1.4em}.container{padding:10px}.s{padding:14px}table{font-size:.8em}th,td{padding:6px}
+.compare{grid-template-columns:1fr}.tabs{flex-direction:column}}
+a{color:var(--p)}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>🌍 陈晓波家庭 2026年夏季旅行计划</h1>
+  <p>上海 → 巴黎 → 瑞士 → (意大利 → 纽约) → 波特兰</p>
+  <div>
+    <span class="badge">👨‍👩‍👧‍👦 晓波+唐艺+Amy+Simon</span>
+    <span class="badge">📅 2026年8月</span>
+    <span class="badge">🔄 v3.0 · 3月2日更新</span>
+  </div>
+</header>
+
+<!-- Tab switcher -->
+<div class="tabs">
+  <div class="tab active" onclick="switchPlan(1)">方案1：完整版（12天）<br><small>巴黎→瑞士→五渔村→罗马→纽约</small></div>
+  <div class="tab" onclick="switchPlan(2)">方案2：精简版（8天）<br><small>巴黎→瑞士→直飞回家</small></div>
+</div>
+
+<!-- ============ PLAN 1 ============ -->
+<div class="plan active" id="plan1">
+
+<div class="s">
+  <h2>📅 方案1 行程总览（12天）</h2>
+  <div class="tl">
+    <div class="tl-item"><strong>8/4 周二</strong> — 上海PVG → 巴黎CDG（<a href="https://www.google.com/search?q=MU569+东航+上海+巴黎+直飞" target="_blank">MU569直飞 🔗</a> 12:25出发，17:30到）</div>
+    <div class="tl-item"><strong>8/5-6</strong> — 🇫🇷 巴黎（2天）铁塔·卢浮宫·蒙马特</div>
+    <div class="tl-item"><strong>8/7</strong> — 🚄 TGV高铁巴黎→因特拉肯（08:24出发，13:23到）</div>
+    <div class="tl-item sp"><strong>8/8</strong> — 🎂 <strong>Amy 13岁生日！</strong>少女峰"欧洲之巅"</div>
+    <div class="tl-item"><strong>8/9</strong> — 🇨🇭 因特拉肯湖区探索/滑翔伞</div>
+    <div class="tl-item"><strong>8/10</strong> — 🚄 火车经米兰 → 🇮🇹 五渔村（07:00出发，14:00到）</div>
+    <div class="tl-item"><strong>8/11</strong> — 五渔村上午游 → 🚄 火车到罗马（13:00出发）</div>
+    <div class="tl-item"><strong>8/12</strong> — 🇮🇹 罗马精华：斗兽场·许愿池·万神殿</div>
+    <div class="tl-item"><strong>8/13</strong> — ✈️ 罗马→纽约（<a href="https://www.google.com/search?q=ITA+Airways+AZ608+Rome+JFK+direct" target="_blank">AZ608直飞 🔗</a> 10:15出发，14:15到）</div>
+    <div class="tl-item"><strong>8/14</strong> — 🇺🇸 纽约：自由女神·中央公园·百老汇</div>
+    <div class="tl-item"><strong>8/15</strong> — ✈️ 纽约→波特兰（Delta 08:30出发，11:45到家🏠）</div>
+  </div>
+</div>
+
+<div class="s">
+  <h2>✈️ 航班信息（全部白天航班，无红眼）</h2>
+  <h3>去程：上海 → 巴黎（8/4）</h3>
+  <table>
+    <tr><th>航班</th><th>航司</th><th>时刻</th><th>飞行</th><th>单人价</th><th>4人</th></tr>
+    <tr style="background:#f0fdf4"><td>⭐ <a href="https://www.google.com/search?q=MU569+PVG+CDG+August+2026" target="_blank">MU569 🔗</a></td><td>东航</td><td>12:25→17:30 同日到</td><td>12h</td><td>$600-900</td><td><strong>$2,400-3,600</strong></td></tr>
+    <tr><td>AF111</td><td>法航</td><td>22:15→05:15+1</td><td>12h</td><td colspan="2">❌ 深夜出发，不推荐</td></tr>
+  </table>
+  <div class="tip">💡 MU569是唯一白天航班！中午出发，傍晚到巴黎，完美。</div>
+
+  <h3>回程1：罗马 → 纽约（8/13）</h3>
+  <table>
+    <tr><th>航班</th><th>航司</th><th>时刻</th><th>飞行</th><th>单人价</th><th>4人</th></tr>
+    <tr style="background:#f0fdf4"><td>⭐ <a href="https://www.google.com/search?q=AZ608+FCO+JFK+direct+flight" target="_blank">AZ608 🔗</a></td><td>ITA Airways</td><td>10:15→14:15 同日到</td><td>10h</td><td>$400-700</td><td><strong>$1,600-2,800</strong></td></tr>
+    <tr><td><a href="https://www.google.com/search?q=Delta+DL185+Rome+JFK" target="_blank">DL185 🔗</a></td><td>Delta</td><td>11:00→15:30</td><td>10.5h</td><td>$400-700</td><td>$1,600-2,800</td></tr>
+  </table>
+
+  <h3>回程2：纽约 → 波特兰（8/15）</h3>
+  <table>
+    <tr><th>航班</th><th>航司</th><th>时刻</th><th>飞行</th><th>单人价</th><th>4人</th></tr>
+    <tr style="background:#f0fdf4"><td>⭐ <a href="https://www.google.com/search?q=Delta+JFK+PDX+morning+flight" target="_blank">Delta早班 🔗</a></td><td>Delta</td><td>08:30→11:45</td><td>6h15m</td><td>$200-350</td><td><strong>$800-1,400</strong></td></tr>
+  </table>
+</div>
+
+<div class="s">
+  <h2>🚄 欧洲火车交通</h2>
+  <table>
+    <tr><th>段落</th><th>路线</th><th>时刻</th><th>时长</th><th>4人价格</th></tr>
+    <tr><td>巴黎→因特拉肯</td><td><a href="https://www.tgv-lyria.com/en" target="_blank">TGV Lyria 🔗</a> 经Basel</td><td>08:24→13:23</td><td>5h</td><td>€400-600</td></tr>
+    <tr><td>因特拉肯→五渔村</td><td><a href="https://www.sbb.ch/en" target="_blank">SBB+Trenitalia 🔗</a> 经米兰</td><td>07:00→14:00</td><td>7h</td><td>€300-500</td></tr>
+    <tr><td>五渔村→罗马</td><td><a href="https://www.trenitalia.com/en.html" target="_blank">Frecciarossa高速 🔗</a></td><td>13:00→16:30</td><td>3.5h</td><td>€200-320</td></tr>
+    <tr style="background:#f1f5f9;font-weight:700"><td colspan="4">火车总计</td><td>€900-1,420</td></tr>
+  </table>
+</div>
+
+<div class="s">
+  <h2>🏨 住宿推荐（$300/间/晚 × 2间 = $600/晚）</h2>
+  <h3>🇫🇷 巴黎（8/4-6，2晚）</h3>
+  <div class="grid">
+    <div class="card"><h4><a href="https://www.google.com/search?q=Novotel+Paris+Tour+Eiffel+booking.com" target="_blank">Novotel Tour Eiffel ⭐🔗</a></h4><p>15区·近铁塔·家庭房·泳池·16岁以下免费</p><p class="price">$280-320/间</p></div>
+    <div class="card"><h4><a href="https://www.google.com/search?q=Pullman+Paris+Tour+Eiffel+booking.com" target="_blank">Pullman Tour Eiffel 🔗</a></h4><p>15区·铁塔对面·4星现代设计</p><p class="price">$300-350/间</p></div>
+  </div>
+
+  <h3>🇨🇭 因特拉肯（8/7-9，2晚）🎂</h3>
+  <div class="grid">
+    <div class="card" style="border-color:var(--a)"><h4><a href="https://www.google.com/search?q=Victoria+Jungfrau+Grand+Hotel+Interlaken+booking.com" target="_blank">Victoria-Jungfrau ⭐🎂🔗</a></h4><p>5星传奇·少女峰全景·可安排生日惊喜</p><p class="price">$350+/间</p></div>
+    <div class="card"><h4><a href="https://www.google.com/search?q=Lindner+Grand+Hotel+Beau+Rivage+Interlaken+booking.com" target="_blank">Beau Rivage 🔗</a></h4><p>湖畔4星·室内泳池·花园</p><p class="price">$280-330/间</p></div>
+  </div>
+
+  <h3>🇮🇹 五渔村（8/10，1晚）</h3>
+  <div class="grid">
+    <div class="card"><h4><a href="https://www.google.com/search?q=Hotel+Porto+Roca+Monterosso+booking.com" target="_blank">Hotel Porto Roca ⭐🔗</a></h4><p>悬崖上·海景绝美·五渔村最佳</p><p class="price">$300-350/间</p></div>
+    <div class="card"><h4><a href="https://www.google.com/search?q=Hotel+La+Spiaggia+Monterosso+booking.com" target="_blank">La Spiaggia 🔗</a></h4><p>直面沙滩·位置方便</p><p class="price">$250-300/间</p></div>
+  </div>
+
+  <h3>🇮🇹 罗马（8/11-12，2晚）</h3>
+  <div class="grid">
+    <div class="card"><h4><a href="https://www.google.com/search?q=Hotel+Artemide+Rome+booking.com" target="_blank">Hotel Artemide ⭐🔗</a></h4><p>TripAdvisor常年#1·屋顶餐厅·Spa</p><p class="price">$280-350/间</p></div>
+    <div class="card"><h4><a href="https://www.google.com/search?q=Hotel+Colosseum+Rome+booking.com" target="_blank">Hotel Colosseum 🔗</a></h4><p>步行到斗兽场2分钟</p><p class="price">$250-320/间</p></div>
+  </div>
+
+  <h3>🇺🇸 纽约（8/13-14，2晚）</h3>
+  <div class="grid">
+    <div class="card"><h4><a href="https://www.google.com/search?q=Hampton+Inn+Times+Square+Central+booking.com" target="_blank">Hampton Inn Times Sq ⭐🔗</a></h4><p>含早餐！时代广场·家庭首选</p><p class="price">$280-330/间</p></div>
+    <div class="card"><h4><a href="https://www.google.com/search?q=LUMA+Hotel+Times+Square+booking.com" target="_blank">LUMA Hotel 🔗</a></h4><p>现代设计·屋顶酒吧</p><p class="price">$300-350/间</p></div>
+  </div>
+</div>
+
+<div class="s">
+  <h2>💰 方案1 预算总览（4人）</h2>
+  <table>
+    <tr><th>项目</th><th>费用</th></tr>
+    <tr><td>✈️ 去程 PVG→CDG（4人）</td><td>$2,400-3,600</td></tr>
+    <tr><td>✈️ 回程 FCO→JFK（4人）</td><td>$1,600-2,800</td></tr>
+    <tr><td>✈️ 回程 JFK→PDX（4人）</td><td>$800-1,400</td></tr>
+    <tr><td>🚄 欧洲火车（3段）</td><td>$1,000-1,560</td></tr>
+    <tr><td>🚕 机场接送/市内交通</td><td>$400-600</td></tr>
+    <tr><td>🏨 住宿（9晚×2间×$300）</td><td><strong>$5,400</strong></td></tr>
+    <tr><td>🍽 餐饮（12天）</td><td>$1,400-2,000</td></tr>
+    <tr><td>🎫 门票+活动</td><td>$1,900-2,100</td></tr>
+    <tr><td>🛡 保险+杂项</td><td>$800-1,000</td></tr>
+    <tr style="background:linear-gradient(90deg,#dbeafe,#f0fdf4);font-weight:700;font-size:1.15em">
+      <td>💰 总计</td><td>~$18,000（¥130,000）</td></tr>
+  </table>
+</div>
+
+<div class="s">
+  <h2>🌡️ 8月天气</h2>
+  <table>
+    <tr><th>城市</th><th>气温</th><th>注意</th></tr>
+    <tr><td>🇫🇷 巴黎</td><td>25-30°C</td><td>偶有热浪超35°C，防晒+遮阳帽</td></tr>
+    <tr><td>🇨🇭 因特拉肯</td><td>山谷19-25°C</td><td>❄️ 少女峰顶-5~0°C，必带厚外套！</td></tr>
+    <tr><td>🇮🇹 五渔村</td><td>27-32°C</td><td>海风舒适，带泳衣</td></tr>
+    <tr><td>🇮🇹 罗马</td><td>30-36°C</td><td>🔥 最热！中午避免暴晒</td></tr>
+    <tr><td>🇺🇸 纽约</td><td>24-32°C</td><td>湿热，室内空调冷备薄外套</td></tr>
+  </table>
+</div>
+
+</div><!-- end plan1 -->
+
+<!-- ============ PLAN 2 ============ -->
+<div class="plan" id="plan2">
+
+<div class="s">
+  <h2>📅 方案2 行程总览（8天）</h2>
+  <div class="tl">
+    <div class="tl-item"><strong>8/4 周二</strong> — 上海PVG → 巴黎CDG（MU569直飞 12:25出发）</div>
+    <div class="tl-item"><strong>8/5</strong> — 🇫🇷 巴黎 Day1：铁塔·塞纳河游船</div>
+    <div class="tl-item"><strong>8/6</strong> — 🇫🇷 巴黎 Day2：卢浮宫·蒙马特·圣心教堂</div>
+    <div class="tl-item"><strong>8/7</strong> — 🚄 TGV到因特拉肯（09:22出发）+ 劳特布鲁嫩瀑布</div>
+    <div class="tl-item sp"><strong>8/8</strong> — 🎂 <strong>Amy生日！</strong>少女峰 + 生日晚餐🧀</div>
+    <div class="tl-item"><strong>8/9</strong> — 🚗 自驾环湖：布里恩茨湖·吉斯巴赫瀑布·施皮茨城堡</div>
+    <div class="tl-item"><strong>8/10</strong> — 🚄 火车到苏黎世机场 → ✈️ 飞回波特兰</div>
+    <div class="tl-item"><strong>8/11</strong> — 🏠 到家！倒时差休息</div>
+  </div>
+  <div class="tip">💡 方案2比方案1少4天，专注法国+瑞士精华，轻松不赶。省下的时间可以用来调时差+开学准备。</div>
+</div>
+
+<div class="s">
+  <h2>✈️ 航班信息</h2>
+  <h3>去程：上海 → 巴黎（8/4）— 同方案1</h3>
+  <table>
+    <tr><th>航班</th><th>航司</th><th>时刻</th><th>飞行</th><th>4人价格</th></tr>
+    <tr style="background:#f0fdf4"><td>⭐ <a href="https://www.google.com/search?q=MU569+PVG+CDG+August+2026" target="_blank">MU569 🔗</a></td><td>东航</td><td>12:25→17:30</td><td>12h</td><td><strong>$2,400-3,600</strong></td></tr>
+  </table>
+
+  <h3>回程：苏黎世 → 波特兰（8/10）</h3>
+  <table>
+    <tr><th>方案</th><th>航司</th><th>路线</th><th>时刻</th><th>4人价格</th></tr>
+    <tr style="background:#f0fdf4"><td>⭐ 推荐</td><td><a href="https://www.google.com/search?q=SWISS+LX38+Zurich+San+Francisco+direct" target="_blank">SWISS+联程 🔗</a></td><td>ZRH→SFO→PDX</td><td>10:25→17:25（同日到！）</td><td><strong>$2,800-4,400</strong></td></tr>
+    <tr><td>备选</td><td><a href="https://www.google.com/search?q=Lufthansa+Zurich+Frankfurt+Portland+flight" target="_blank">Lufthansa 🔗</a></td><td>ZRH→FRA→PDX</td><td>11:00→18:30</td><td>$2,600-4,000</td></tr>
+    <tr><td>备选</td><td><a href="https://www.google.com/search?q=United+Zurich+Chicago+Portland+flight" target="_blank">United 🔗</a></td><td>ZRH→ORD→PDX</td><td>10:30→19:00</td><td>$2,400-3,800</td></tr>
+  </table>
+  <div class="hl">📌 因特拉肯→苏黎世机场火车仅2h17m（06:29出发→08:37到），从容赶上10:25航班</div>
+</div>
+
+<div class="s">
+  <h2>🚄 火车 + 🚗 瑞士自驾</h2>
+  <table>
+    <tr><th>段落</th><th>时刻</th><th>时长</th><th>4人价格</th></tr>
+    <tr><td><a href="https://www.tgv-lyria.com/en" target="_blank">巴黎→因特拉肯 TGV 🔗</a></td><td>09:22→14:55</td><td>5.5h</td><td>€400-600</td></tr>
+    <tr><td><a href="https://www.sbb.ch/en" target="_blank">因特拉肯→苏黎世机场 🔗</a></td><td>06:29→08:37</td><td>2h17m</td><td>CHF 120-160</td></tr>
+  </table>
+
+  <h3>🚗 瑞士租车自驾（8/7下午-8/10早上，约3天）</h3>
+  <div class="grid">
+    <div class="card">
+      <h4>推荐路线</h4>
+      <p>🏔 劳特布鲁嫩瀑布（20min）→ 布里恩茨湖（30min）→ 吉斯巴赫瀑布 → 施皮茨城堡 → 图恩湖游泳</p>
+    </div>
+    <div class="card">
+      <h4>费用明细</h4>
+      <p>租车：CHF 100-150/天 × 3天</p>
+      <p>保险：含在租金内</p>
+      <p>Vignette高速贴：CHF 40</p>
+      <p>油费：约CHF 60-80</p>
+      <p class="price">总计：$400-500</p>
+    </div>
+  </div>
+  <div class="tip">💡 <a href="https://www.rentalcars.com" target="_blank">Rentalcars.com 🔗</a> 比价，因特拉肯东站取还车。瑞士停车方便、治安好，自驾体验极佳！</div>
+</div>
+
+<div class="s">
+  <h2>🏨 住宿推荐</h2>
+  <h3>🇫🇷 巴黎（8/4-6，2晚）— 同方案1</h3>
+  <div class="grid">
+    <div class="card"><h4><a href="https://www.google.com/search?q=Novotel+Paris+Tour+Eiffel+booking.com" target="_blank">Novotel Tour Eiffel ⭐🔗</a></h4><p>近铁塔·泳池·16岁以下免费</p><p class="price">$280-320/间</p></div>
+    <div class="card"><h4><a href="https://www.google.com/search?q=Pullman+Paris+Tour+Eiffel+booking.com" target="_blank">Pullman Tour Eiffel 🔗</a></h4><p>铁塔对面·4星</p><p class="price">$300-350/间</p></div>
+  </div>
+
+  <h3>🇨🇭 因特拉肯（8/7-9，2晚）🎂</h3>
+  <div class="grid">
+    <div class="card" style="border-color:var(--a)"><h4><a href="https://www.google.com/search?q=Hotel+Interlaken+booking.com" target="_blank">Hotel Interlaken ⭐🎂🔗</a></h4><p>600年历史·少女峰景观·可办生日晚餐</p><p class="price">$280-350/间</p></div>
+    <div class="card"><h4><a href="https://www.google.com/search?q=Lindner+Grand+Hotel+Beau+Rivage+Interlaken+booking.com" target="_blank">Beau Rivage 🔗</a></h4><p>湖畔4星·室内泳池</p><p class="price">$280-330/间</p></div>
+  </div>
+</div>
+
+<div class="s">
+  <h2>💰 方案2 预算总览（4人）</h2>
+  <table>
+    <tr><th>项目</th><th>费用</th></tr>
+    <tr><td>✈️ 去程 PVG→CDG（4人）</td><td>$2,400-3,600</td></tr>
+    <tr><td>✈️ 回程 ZRH→SFO→PDX（4人）</td><td>$2,800-4,400</td></tr>
+    <tr><td>🚄 火车（巴黎→因特拉肯+机场）</td><td>$550-700</td></tr>
+    <tr><td>🚗 瑞士租车3天</td><td>$400-500</td></tr>
+    <tr><td>🚕 机场接送/市内交通</td><td>$200-300</td></tr>
+    <tr><td>🏨 住宿（4晚×2间×$300）</td><td><strong>$2,400</strong></td></tr>
+    <tr><td>🍽 餐饮（8天）</td><td>$800-1,000</td></tr>
+    <tr><td>🎫 门票+活动</td><td>$1,200-1,500</td></tr>
+    <tr><td>🛡 保险+杂项</td><td>$500-700</td></tr>
+    <tr style="background:linear-gradient(90deg,#dbeafe,#f0fdf4);font-weight:700;font-size:1.15em">
+      <td>💰 总计</td><td>~$13,200（¥95,000）</td></tr>
+  </table>
+</div>
+
+<div class="s">
+  <h2>🌡️ 8月天气</h2>
+  <table>
+    <tr><th>城市</th><th>气温</th><th>注意</th></tr>
+    <tr><td>🇫🇷 巴黎</td><td>25-30°C</td><td>防晒+遮阳帽，偶有热浪</td></tr>
+    <tr><td>🇨🇭 因特拉肯</td><td>山谷19-25°C</td><td>❄️ 少女峰顶-5~0°C，必带厚外套+手套！</td></tr>
+  </table>
+</div>
+
+</div><!-- end plan2 -->
+
+<!-- ============ COMPARISON ============ -->
+<div class="s">
+  <h2>📊 方案对比</h2>
+  <div class="compare">
+    <div class="card">
+      <h4>方案1：完整版</h4>
+      <p>🗓 12天 · 5个城市</p>
+      <p>🇫🇷🇨🇭🇮🇹🇺🇸</p>
+      <p class="price">~$18,000（¥130,000）</p>
+      <p style="margin-top:8px">✅ 一次玩遍欧洲+纽约<br>✅ 五渔村海岸+罗马古迹<br>✅ 纽约停2晚调时差<br>❌ 行程较满，12天不停歇</p>
+    </div>
+    <div class="card rec">
+      <h4>方案2：精简版 ⭐</h4>
+      <p>🗓 8天 · 2个城市</p>
+      <p>🇫🇷🇨🇭</p>
+      <p class="price">~$13,200（¥95,000）</p>
+      <p style="margin-top:8px">✅ 轻松不赶，深度体验<br>✅ 瑞士自驾+少女峰<br>✅ 省 ~¥35,000<br>❌ 没有意大利和纽约</p>
+    </div>
+  </div>
+  <div class="hl">💡 <strong>差额约 $4,800（¥35,000）</strong>，主要来自：多5晚住宿（$3,000）+ 意大利段交通和门票（$1,200）+ 纽约住宿和活动（$1,600）- 瑞士回程机票更贵（-$1,000）</div>
+</div>
+
+<footer>
+  <p>🌍 陈晓波家庭 2026年夏季旅行计划 | v3.0 · 2026年3月2日更新</p>
+  <p>由 Sky ☁️ 协助规划 | 航班时间和价格为预估，以实际预订为准</p>
+  <p>🔗 所有蓝色文字均可点击查看详情</p>
+</footer>
+
+</div>
+
+<script>
+function switchPlan(n){
+  document.querySelectorAll('.plan').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('plan'+n).classList.add('active');
+  document.querySelectorAll('.tab')[n-1].classList.add('active');
+}
+</script>
+</body>
+</html>
